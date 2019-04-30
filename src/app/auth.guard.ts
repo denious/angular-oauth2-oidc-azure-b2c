@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     if (!this.oauthService.hasValidAccessToken()) {
-      const callbackUrl = state.url;
+      const callbackUrl = next.queryParams['callbackUrl'] || state.url;
       this.oauthService.initImplicitFlow(callbackUrl);
 
       return false;

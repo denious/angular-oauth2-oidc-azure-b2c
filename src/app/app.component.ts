@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { OAuthService, AuthConfig, NullValidationHandler, OAuthErrorEvent } from 'angular-oauth2-oidc';
 
